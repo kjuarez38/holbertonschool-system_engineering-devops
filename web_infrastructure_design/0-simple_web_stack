@@ -1,0 +1,74 @@
+  +-------------+
+  |   User      |
+  +-------------+
+          |
+          | Request (www.foobar.com)
+          v
++-------------------+
+|        DNS        |
+| (Resolve to IP)   |
+|       8.8.8.8     |
++-------------------+
+          |
+          | HTTP(S) Request
+          v
++-----------------------+
+|      Web Server       |
+|      (Nginx)          |
+|                       |
+|       ^               |
+|       | HTTP(S) Req   |
+|       |               |
+|       v               |
+|      Application      |
+|       Server          |
+|      (Code Base)      |
+|                       |
+|       ^               |
+|       | Database Req  |
+|       |               |
+|       v               |
+|       Database        |
+|       (MySQL)         |
++-----------------------+
+          |
+          | HTTP(S) Response
+          v
+  +-------------+
+  |   User      |
+  +-------------+
+
+##Specifics about the Infrastructure:
+
+1.What is a server?
+A server is a computer system or software that provides functionality or services to other programs or devices, known as clients, within a network.
+
+2.Role of the domain name:
+A domain name is a human-readable address used to access websites. It translates to an IP address and helps users easily locate and identify websites on the internet.
+
+3.Type of DNS record www in www.foobar.com:
+The DNS record for "www" in www.foobar.com is typically a CNAME (Canonical Name) record, which points to the domain name foobar.com.
+
+4.Role of the web server:
+The web server (Nginx in this case) handles incoming HTTP requests from clients, serves web pages, and manages static content delivery to users' browsers.
+
+5.Role of the application server:
+The application server executes the application logic, processes dynamic content, and interacts with databases to generate personalized responses based on user requests.
+
+6.Role of the database:
+The database (MySQL) stores and manages structured data for the website. It facilitates data retrieval, storage, and manipulation based on application requirements.
+
+7.Communication with the user's computer:
+The server communicates with the user's computer over the internet using protocols like HTTP or HTTPS to deliver web content and responses to user requests.
+
+
+##Issues with the Infrastructure:
+
+1.SPOF (Single Point of Failure):
+The infrastructure has a single server hosting all components. If this server fails, the entire website becomes inaccessible, leading to a single point of failure.
+
+2.Downtime during maintenance:
+When maintenance tasks like deploying new code require restarting the web server, it can result in downtime where users cannot access the website or experience interruptions in service.
+
+3.Scalability limitations with high traffic:
+Due to the single-server setup, the infrastructure may struggle to handle a large volume of incoming traffic efficiently. This limitation makes it challenging to scale resources to meet increased demand effectively.
