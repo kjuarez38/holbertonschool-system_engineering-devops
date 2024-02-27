@@ -1,4 +1,5 @@
 1. Resources
+
 1.1 Network:
 The network is the infrastructure that enables communication between various computing devices. It can be wired or wireless, facilitating data transfer among computers, servers, IoT devices, etc.
 
