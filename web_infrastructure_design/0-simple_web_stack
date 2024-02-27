@@ -38,37 +38,38 @@
   |   User      |
   +-------------+
 
-##Specifics about the Infrastructure:
-
-1.What is a server?
-A server is a computer system or software that provides functionality or services to other programs or devices, known as clients, within a network.
-
-2.Role of the domain name:
-A domain name is a human-readable address used to access websites. It translates to an IP address and helps users easily locate and identify websites on the internet.
-
-3.Type of DNS record www in www.foobar.com:
-The DNS record for "www" in www.foobar.com is typically a CNAME (Canonical Name) record, which points to the domain name foobar.com.
-
-4.Role of the web server:
-The web server (Nginx in this case) handles incoming HTTP requests from clients, serves web pages, and manages static content delivery to users' browsers.
-
-5.Role of the application server:
-The application server executes the application logic, processes dynamic content, and interacts with databases to generate personalized responses based on user requests.
-
-6.Role of the database:
-The database (MySQL) stores and manages structured data for the website. It facilitates data retrieval, storage, and manipulation based on application requirements.
-
-7.Communication with the user's computer:
-The server communicates with the user's computer over the internet using protocols like HTTP or HTTPS to deliver web content and responses to user requests.
 
 
-##Issue with the Infrastructure:
+### What is a server?
+A server is a computer or software system that provides functionality or services to other computers, known as clients, over a network. Servers can provide various services such as file storage, email, web hosting, database management, and more.
 
-1.SPOF (Single Point of Failure):
-The infrastructure has a single server hosting all components. If this server fails, the entire website becomes inaccessible, leading to a single point of failure.
+### What is the role of the domain name?
+The domain name serves as a human-readable alias for the IP address of a server hosting a website or service. It helps users easily identify and access websites without needing to remember numerical IP addresses.
 
-2.Downtime during maintenance:
-When maintenance tasks like deploying new code require restarting the web server, it can result in downtime where users cannot access the website or experience interruptions in service.
+### What is the DNS record type for www in www.foobar.com?
+The DNS record type for www in www.foobar.com is typically a CNAME (Canonical Name) record, which serves as an alias for the domain's primary A (Address) record, pointing to the server's IP address.
 
-3.Scalability limitations with high traffic:
-Due to the single-server setup, the infrastructure may struggle to handle a large volume of incoming traffic efficiently. This limitation makes it challenging to scale resources to meet increased demand effectively.
+### What is the role of the web server?
+The web server's role is to handle HTTP requests from clients (such as web browsers) and respond with web content, which can include HTML pages, images, CSS files, JavaScript, etc. It processes these requests and serves the requested resources to users.
+
+### What is the role of the application server?
+The application server hosts and executes the business logic and application code of a web application. It handles dynamic content generation, database transactions, user authentication, and other application-specific tasks.
+
+### What is the role of the database?
+The database stores and manages structured data used by the web application. It provides a mechanism for storing, retrieving, updating, and managing data efficiently. Common database systems include MySQL, PostgreSQL, MongoDB, etc.
+
+### What does the server use to communicate with the user's computer requesting the website?
+The server communicates with the user's computer using the HTTP (or HTTPS) protocol. This communication occurs over the Internet or an internal network, with the server responding to HTTP requests sent by the user's web browser.
+
+Now, let's address the challenges posed by this infrastructure:
+
+### Single Point of Failure (SPOF)
+SPOF refers to any component in the infrastructure whose failure can lead to the entire system's failure. It can be mitigated by introducing redundancy, such as backup servers or load balancers, to ensure continued operation in case of failure.
+
+### Downtime during maintenance (such as deploying new code, restarting the web server)
+Maintenance activities like deploying new code or restarting servers can result in downtime, affecting user access to services. To minimize impact, organizations often implement strategies like rolling deployments or scheduling maintenance during off-peak hours.
+
+### Inability to scale if incoming traffic is too high
+If incoming traffic exceeds the capacity of the infrastructure, services may become slow or unavailable. Scaling strategies such as horizontal scaling (adding more servers) or vertical scaling (upgrading server resources) can address this issue, along with load balancing to distribute traffic efficiently.
+
+By addressing these challenges and understanding the roles of different components in the infrastructure, organizations can build robust and scalable systems to meet user demands effectively.
