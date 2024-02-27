@@ -62,7 +62,7 @@ The database (MySQL) stores and manages structured data for the website. It faci
 The server communicates with the user's computer over the internet using protocols like HTTP or HTTPS to deliver web content and responses to user requests.
 
 
-##Issues with the Infrastructure:
+##Issue with the Infrastructure:
 
 1.SPOF (Single Point of Failure):
 The infrastructure has a single server hosting all components. If this server fails, the entire website becomes inaccessible, leading to a single point of failure.
